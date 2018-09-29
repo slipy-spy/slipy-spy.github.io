@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="前言在一般的项目中，经常会有各种状态的要求的场景。比如一个论坛，用户账户会有激活、删除、冻结、手机绑定、邮箱绑定等多种状态，如果没个状态都在数据库中作一个字段，那么会很繁琐。而且代码实现也会很麻烦。因此，本文就会引导大家使用二进制来表示及控制多状态。 正文二进制表示多状态的原理就是每个bit位对应一个状态，0和1来表示该状态的false和true。Java中，int型变量是32位，及最多可以表示3">
+<meta name="description" content="前言在一般的项目中，经常会有各种状态的要求的场景。比如一个论坛，用户账户会有激活、删除、冻结、手机绑定、邮箱绑定等多种状态，如果没个状态都在数据库中作一个字段，那么会很繁琐。而且代码实现也会很麻烦。因此，本文就会引导大家使用二进制来表示及控制多状态。">
 <meta name="keywords" content="Java,MySql,JavaWeb">
 <meta property="og:type" content="article">
 <meta property="og:title" content="用二进制控制多状态及相应SQL语句教程">
 <meta property="og:url" content="http://yoursite.com/2018/06/12/用二进制控制多状态及相应SQL语句教程/index.html">
 <meta property="og:site_name" content="slipy">
-<meta property="og:description" content="前言在一般的项目中，经常会有各种状态的要求的场景。比如一个论坛，用户账户会有激活、删除、冻结、手机绑定、邮箱绑定等多种状态，如果没个状态都在数据库中作一个字段，那么会很繁琐。而且代码实现也会很麻烦。因此，本文就会引导大家使用二进制来表示及控制多状态。 正文二进制表示多状态的原理就是每个bit位对应一个状态，0和1来表示该状态的false和true。Java中，int型变量是32位，及最多可以表示3">
+<meta property="og:description" content="前言在一般的项目中，经常会有各种状态的要求的场景。比如一个论坛，用户账户会有激活、删除、冻结、手机绑定、邮箱绑定等多种状态，如果没个状态都在数据库中作一个字段，那么会很繁琐。而且代码实现也会很麻烦。因此，本文就会引导大家使用二进制来表示及控制多状态。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-06-12T08:46:42.000Z">
+<meta property="og:updated_time" content="2018-09-29T06:03:44.972Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="用二进制控制多状态及相应SQL语句教程">
-<meta name="twitter:description" content="前言在一般的项目中，经常会有各种状态的要求的场景。比如一个论坛，用户账户会有激活、删除、冻结、手机绑定、邮箱绑定等多种状态，如果没个状态都在数据库中作一个字段，那么会很繁琐。而且代码实现也会很麻烦。因此，本文就会引导大家使用二进制来表示及控制多状态。 正文二进制表示多状态的原理就是每个bit位对应一个状态，0和1来表示该状态的false和true。Java中，int型变量是32位，及最多可以表示3">
+<meta name="twitter:description" content="前言在一般的项目中，经常会有各种状态的要求的场景。比如一个论坛，用户账户会有激活、删除、冻结、手机绑定、邮箱绑定等多种状态，如果没个状态都在数据库中作一个字段，那么会很繁琐。而且代码实现也会很麻烦。因此，本文就会引导大家使用二进制来表示及控制多状态。">
 
 
 
@@ -301,6 +301,7 @@
 
       
         <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>在一般的项目中，经常会有各种状态的要求的场景。比如一个论坛，用户账户会有激活、删除、冻结、手机绑定、邮箱绑定等多种状态，如果没个状态都在数据库中作一个字段，那么会很繁琐。而且代码实现也会很麻烦。因此，本文就会引导大家使用二进制来表示及控制多状态。</p>
+<a id="more"></a>
 <h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h3><p>二进制表示多状态的原理就是每个bit位对应一个状态，0和1来表示该状态的false和true。Java中，int型变量是32位，及最多可以表示32中状态。然而，我们一般并不需要过多状态。</p>
 <p>例：MySQL字段’ACCOUNT_STATUS’，对应DO类中的属性’accountStatus’</p>
 <blockquote>
